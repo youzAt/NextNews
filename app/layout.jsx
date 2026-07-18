@@ -1,4 +1,4 @@
-import MainHeader from "@/components/mainHeader/MainHeader";
+import MainHeader from "@/components/MainHeader";
 
 import "./globals.css";
 
