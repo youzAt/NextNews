@@ -26,6 +26,14 @@ const FilteredNewsPage = async ({ params }) => {
 		links = [];
 	}
 
+	if (
+		(selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
+		(selectedMonth &&
+			!getAvailableNewsMonths(selectedYear).includes(+selectedMonth))
+	) {
+		throw new Error("Invalid Filter.");
+	}
+
 	let newsContent = <p>No news found for the selected period.</p>;
 
 	if (news && news.length > 0) {
