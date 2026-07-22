@@ -2,8 +2,8 @@ import NewsList from "@/components/NewsList";
 
 import { getAllNews } from "@/lib/news";
 
-const NewsPage = () => {
-	const allNews = getAllNews();
+const NewsPage =async () => {
+	const allNews = await getAllNews();
 	return (
 		<>
 			<h1>News Page</h1>

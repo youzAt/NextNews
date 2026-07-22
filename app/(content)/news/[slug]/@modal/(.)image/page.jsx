@@ -1,11 +1,9 @@
 import ModalBackdrop from "@/components/ModalBackdrop";
-import { DUMMY_NEWS } from "@/dummy-news";
+import { getNewsItem } from "@/lib/news";
 
 const InterceptedImagePage = async ({ params }) => {
 	const { slug: newsItemSlug } = await params;
-	const newsItem = DUMMY_NEWS.find(
-		(newsItem) => newsItem.slug === newsItemSlug,
-	);
+	const newsItem = await getNewsItem(newsItemSlug);
 	if (!newsItem) notFound();
 
 	return (
